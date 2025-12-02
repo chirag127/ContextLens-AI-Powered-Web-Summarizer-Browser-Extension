@@ -1,0 +1,77 @@
+name: CI
+
+# This workflow will do a clean install of dependencies, cache/restore them, build the source code and run tests across different node.js versions.
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ '20.x' ] # Using Node.js 20.x as per modern standards for extensions.
+      # fail-fast: true
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm' # Use npm cache for faster dependency installation.
+
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Install Biome (Linter/Formatter)
+        # Using Biome as the linter/formatter as per Apex standards.
+        # Ensure it's installed globally or as a dev dependency.
+        run: npm install -g @biomejs/biome
+
+      - name: Lint with Biome
+        run: biome check --apply src/
+        # Ensure src/ exists or adjust path as needed.
+
+      - name: Build Extension
+        # This step depends on the actual build process for a browser extension.
+        # Assuming a standard Vite/Webpack build for extensions.
+        # Adjust 'dist' to your actual build output directory if different.
+        run: npm run build
+        # Ensure a 'build' script is defined in your package.json.
+
+      - name: Run Vitest (Unit Tests)
+        # Vitest is specified in Apex standards for JavaScript projects.
+        # Ensure your tests are configured correctly.
+        run: npm test -- --run
+        # Assumes 'test' script in package.json runs Vitest.
+
+      # Optional: E2E testing with Playwright (if applicable and configured)
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
+      # 
+      # - name: Run Playwright E2E Tests
+      #   run: npm run test:e2e
+      #   env:
+      #     CI: true
+
+      - name: Upload Artifacts (Build Output)
+        # Optional: Upload build artifacts for manual inspection or deployment.
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-build
+          path: dist/ # Adjust path to your build output directory.
+
+      # Optional: Codecov for coverage reporting - requires configuration and token
+      # - name: Upload Coverage to Codecov
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     directory: ./coverage # Adjust path to your coverage directory.
