@@ -1,78 +1,72 @@
 ---
-name: Bug Report
-about: Create a report to help us improve
-title: "[Bug] - "
-labels: bug
-assignees:
+name: "🐛 Bug Report"
+about: Report a reproducible bug or unexpected behavior in CogniDigest-AI-Web-Content-Summarizer-Browser-Extension.
+title: "[BUG]: Brief and descriptive title"
+labels: ["bug", "triage", "needs-reproduction"]
+assignees: ["chirag127"]
+---
 
+Thank you for taking the time to report a bug in **CogniDigest-AI-Web-Content-Summarizer-Browser-Extension**! Your meticulous reports are crucial for us to maintain a high-quality, reliable tool for web content summarization.
 
-body:
-  - type: markdown
-    attributes:
-      value: | # Use the new repository name in the header
-        ## Bug Report for `ContextLens-AI-Powered-Web-Summarizer-Browser-Extension`
+Before submitting, please ensure you have:
+- Searched existing [issues](https://github.com/chirag127/CogniDigest-AI-Web-Content-Summarizer-Browser-Extension/issues) to avoid duplicates.
+- Reviewed our [Contributing Guidelines](https://github.com/chirag127/CogniDigest-AI-Web-Content-Summarizer-Browser-Extension/blob/main/.github/CONTRIBUTING.md).
 
-        Thank you for taking the time to report a bug! Please provide as much detail as possible to help us quickly understand and resolve the issue. This report will be processed by the Apex Technical Authority agents for rapid triage and resolution.
+---
 
-        --- # Separator adhering to Apex standards
+### 📝 Describe the Bug
+A clear and concise description of what the bug is. What problem is it causing?
 
-  - type: input
-    id: summary
-    attributes:
-      label: Concise Summary of the Bug
-      description: A brief, clear description of the bug.
-      placeholder: e.g., Extension crashes when summarizing long Reddit threads.
-    validations:
-      required: true
-  - type: input
-    id: steps
-    attributes:
-      label: Steps to Reproduce
-      description: Provide a step-by-step guide to reproduce the bug.
-      placeholder: |
-        1. Go to a specific website (URL if possible).
-        2. Perform action X.
-        3. Observe the unexpected behavior.
-    validations:
-      required: true
-  - type: textarea
-    id: expected_behavior
-    attributes:
-      label: Expected Behavior
-      description: What you expected to happen.
-      placeholder: e.g., The extension should provide a concise summary of the article.
-    validations:
-      required: true
-  - type: textarea
-    id: actual_behavior
-    attributes:
-      label: Actual Behavior
-      description: What actually happened, including any error messages.
-      placeholder: e.g., The extension showed an error message 'API rate limit exceeded' and no summary was generated.
-    validations:
-      required: true
-  - type: input
-    id: environment
-    attributes:
-      label: Environment Details
-      description: Specify your operating system, browser version, and extension version.
-      placeholder: e.g., Windows 11, Chrome 120.0.6099.217, Extension v1.2.0
-    validations:
-      required: true
-  - type: textarea
-    id: additional_context
-    attributes:
-      label: Additional Information (Optional)
-      description: Any other context, screenshots, or logs that might be helpful.
-      placeholder: You can paste screenshots or relevant log snippets here.
-    validations:
-      required: false
-  - type: markdown
-    attributes:
-      value: | # Dynamic links to repository and documentation
-        --- # Separator adhering to Apex standards
+---
 
-        **Repository:** [chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension)
-        **AI Agent Directives:** [AGENTS.md](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension/blob/main/AGENTS.md)
+### 再現手順 (Steps to Reproduce)
+Please provide **detailed** and unambiguous steps to reproduce the behavior.
+1. Go to '...' (e.g., a specific URL)
+2. Activate the CogniDigest extension by clicking '....'
+3. Perform action '....'
+4. Observe the unexpected behavior or error.
 
-        *This report will be auto-processed by the Apex Technical Authority's AI agents.*
+---
+
+### 🧐 Expected Behavior
+A clear and concise description of what you expected to happen when following the steps above.
+
+---
+
+### 💥 Actual Behavior
+A clear and concise description of what actually happened, including any error messages, incorrect summaries, or unexpected UI states.
+
+---
+
+### 📸 Screenshots & Recordings (Optional)
+If applicable, add screenshots or a short video/GIF to visually demonstrate your problem. Visual aids are incredibly helpful for efficient debugging.
+
+---
+
+### 🌍 Browser & Extension Details
+Please provide the following system and environment information:
+-   **Browser Name & Version:** [e.g., Google Chrome 120.0.6099.129, Mozilla Firefox 119.0.1, Microsoft Edge 118.0.2088.76]
+-   **Operating System:** [e.g., Windows 11 23H2, macOS Sonoma 14.2, Ubuntu 22.04 LTS]
+-   **CogniDigest Extension Version:** [Check your extension settings or `chrome://extensions` (or equivalent for other browsers) for the installed version. e.g., `1.0.0-beta.5`]
+-   **Manifest Version:** [Always Manifest V3 for this project]
+
+---
+
+### 💡 Additional Context (Optional)
+Add any other relevant context about the problem here. For example, have you tried any workarounds? Does this bug occur on specific types of websites (e.g., news articles, forums, social media)? Is it intermittent or consistent?
+
+---
+
+### ✅ Checklist
+Please complete all the following sections and check them off.
+- [ ] I have provided a clear and concise description of the bug.
+- [ ] I have provided detailed, reproducible steps for the bug.
+- [ ] I have clearly described the expected behavior.
+- [ ] I have clearly described the actual behavior, including any error messages.
+- [ ] I have included browser and extension version details.
+- [ ] I have searched for existing issues and believe this is not a duplicate.
+- [ ] I have reviewed the project's [Contributing Guidelines](https://github.com/chirag127/CogniDigest-AI-Web-Content-Summarizer-Browser-Extension/blob/main/.github/CONTRIBUTING.md).
+
+---
+
+Thank you for your valuable contribution to improving CogniDigest!
