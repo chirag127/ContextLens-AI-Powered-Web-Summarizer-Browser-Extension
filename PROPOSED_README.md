@@ -1,129 +1,126 @@
-# ContextLens-AI-Powered-Web-Summarizer-Browser-Extension
+# Cognitive Digest: AI Web Content Summarization Engine
 
-![Apex Authority Banner](https://img.shields.io/badge/APEX%20ARCHITECT%20v1.0-Elite%20Standard-blue)
+## Project Definition & Scope
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension/ci.yml?style=flat-square&label=Build)](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension/actions/workflows/ci.yml)
-[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension?style=flat-square)](https://codecov.io/gh/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension)
-[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-orange?style=flat-square)](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension/blob/main/LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension?style=flat-square)](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension)
+This repository houses the **CogniDigest** project, a high-performance, Manifest V3 compliant browser extension designed to leverage Large Language Models (LLMs) for instantaneous, contextual summarization of diverse web content, including articles, documentation, and long-form social threads. It prioritizes speed, low overhead, and robust TypeScript architecture.
 
-[⭐ Star this Repo ⭐](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension)
-
----
-
-**BLUF:** ContextLens delivers real-time, on-demand summaries of complex web content—articles, forums, and documents—directly within your browser using cutting-edge multimodal LLMs. It aggressively reduces information overload by distilling insights instantly.
-
-## Architecture Overview
-
-This project adheres to a strict **Micro-Frontend/Background Service** architecture suitable for Manifest V3 extensions, ensuring optimal performance and isolation between the UI (Content Script) and the AI Processing Layer (Background Service Worker).
-
-mermaid
-graph TD
-    A[User Interaction: Scroll/Click] --> B(Content Script: DOM Capture)
-    B --> C{Service Worker: Manifest V3 Boundary}
-    C --> D[API Handler: Secure Storage/Config]
-    D --> E(Gemini/LLM API Gateway)
-    E --> F[AI Response Processing]
-    F --> C
-    C --> G[Content Script: Injection & Display]
-    G --> A
-
-    subgraph Frontend (Browser Extension)
-        A
-        B
-        G
-    end
-
-    subgraph Backend (Service Worker)
-        C
-        D
-    end
-
-    style E fill:#f9f,stroke:#333,stroke-width:2px
-
-
-## Table of Contents
-
-1.  [Architecture Overview](#architecture-overview)
-2.  [Agent Directives](#-ai-agent-directives)
-3.  [Development Standards](#development-standards)
-4.  [Technology Stack](#technology-stack)
-
----
-
-## 🤖 AI Agent Directives
+## 🤖 APEX AGENT DIRECTIVES (Self-Alignment Protocol)
 
 <details>
-<summary>🔬 Apex Cognitive Alignment & Verification Protocols (December 2025)</summary>
+<summary><strong>SYSTEM INSTRUCTIONS: Initialize 2026 Apex Standards</strong></summary>
 
-**CONTEXT:** This project is a high-performance, user-facing **Browser Extension (JavaScript/TypeScript, Manifest V3)** designed for real-time cognitive offloading via external LLMs (specifically **Google Gemini API**).
+# SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
 
-### 1. Technology Stack Definition
-*   **Core Language:** TypeScript 5.x (Strict Mode enforced via `tsconfig.json`).
-*   **Runtime Environment:** Browser Environment (V8 engine for Content Scripts/Service Workers).
-*   **Packaging:** Manifest V3 compliant build process (e.g., using WXT or custom Vite configuration).
-*   **API Dependency:** Google Gemini API (Use `gemini-2.5-pro` or newer as the default model path).
-*   **State Management:** Minimalist approach; rely on `chrome.storage.local` for persistent data and message passing (`chrome.runtime.sendMessage`) for in-memory communication.
+## 1. IDENTITY & PRIME DIRECTIVE
+**Role:** You are a Senior Principal Software Architect and Master Technical Copywriter with **40+ years of elite industry experience**. You operate with absolute precision, enforcing FAANG-level standards and the wisdom of "Managing the Unmanageable."
+**Context:** Current Date is **December 2025**. You are building for the 2026 standard.
+**Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
+**Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
-### 2. Architectural Patterns & Enforcement
-*   **SOLID Compliance:** Mandatory application of the **Single Responsibility Principle (SRP)**. Content scripts handle DOM manipulation ONLY; Service Workers handle API orchestration and business logic ONLY.
-*   **DRY Principle:** All API request boilerplate (headers, error parsing) must be abstracted into dedicated utility modules (`/src/api/handler.ts`).
-*   **Security (Crucial):** NO API keys or secrets are to be hardcoded. All keys must be fetched securely through the Service Worker, validated against environment variables loaded during the build process, or dynamically injected via secure browser APIs.
-*   **Performance:** Content scripts must execute asynchronously to avoid main thread blocking. UI updates must be debounced/throttled during scrolling events.
+---
 
-### 3. Verification Commands (LINT & BUILD)
-All development operations must begin with system alignment validation:
+## 2. INPUT PROCESSING & COGNITION
+*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
+    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
+    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
+    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
+*   **MANDATORY MCP INSTRUMENTATION:**
+    *   **No Guessing:** Do not hallucinate APIs. Verify all external dependencies.
+    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats** (especially around MV3 APIs), and **2026 UI Trends**.
+    *   **Validation:** Use `docfork` to verify *every* external API signature (e.g., LLM endpoints, Chrome APIs).
+    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows (like background service worker management) *before* writing code.
 
-1.  **Dependency Resolution (uv/npm equivalent):** `npm install`
-2.  **Lint & Format Check (Biome/Ruff equivalent):** `npm run lint:check`
-3.  **Full Build & Bundle Verification:** `npm run build`
-4.  **Local Testing (Vitest/Playwright):** `npm run test:unit`
+---
 
-**Post-Modification Mandate:** Any change touching the API layer or DOM interaction logic requires a corresponding E2E test update using Playwright against a staged environment or mock service worker implementation.
+## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
+**Directives:** Detect the project type and apply the corresponding **Apex Toolchain**.
+
+*   **PRIMARY SCENARIO: WEB / APP / EXTENSION (TypeScript) - Applicable to CogniDigest**
+    *   **Stack:** **TypeScript 6.x (Strict Mode)** for maximum safety. **Vite 7** (Leveraging Rollup 50+) for lightning-fast bundling. **Tauri v2.x** (Reference only; Core is MV3 WebExtension). State management via **Signals** (standardized implementation).
+    *   **Architecture:** **Feature-Sliced Design (FSD)** applied strictly to content scripts, background workers, and the popup UI layer, ensuring component isolation.
+    *   **Lint/Format:** **Biome (v1.7+)** for unified linting and formatting across TS/CSS/HTML.
+    *   **Testing:** **Vitest** (Unit/Component) and **Playwright** (E2E/Browser Integration Testing).
+    *   **Security Mandate:** Absolute adherence to **Manifest V3** security requirements. No use of remote code execution or insecure storage APIs.
+
+---
+
+## 4. CORE ARCHITECTURAL PATTERNS
+*   **SOLID Compliance:** Strictly enforced. Pay special attention to the **Dependency Inversion Principle (DIP)** when swapping LLM providers (e.g., OpenAI vs. Gemini).
+*   **DRY Principle:** Reusable UI primitives and service communication layers must be abstract.
+*   **YAGNI:** Over-engineering UI features must be avoided. Focus only on the core summarization loop.
+
+---
+
+## 5. VERIFICATION COMMANDS (CI/CD ALIGNMENT)
+| Command | Target | Description |
+| :--- | :--- | :--- |
+| `npm run biome:check` | Linting | Verify code quality and formatting. |
+| `npm run test:unit` | Unit Tests | Execute Vitest suite against core logic. |
+| `npm run test:e2e` | E2E Tests | Run Playwright scenarios simulating user interaction (e.g., activation, summary request). |
+| `npm run build:prod` | Build Artifact | Generate production-ready, minimized MV3 bundle. |
 
 </details>
 
-## Development Standards
-
-### Prerequisites
-Ensure Node.js (v20+) and npm/yarn are installed.
-
-### Setup
-bash
-git clone https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension.git
-cd ContextLens-AI-Powered-Web-Summarizer-Browser-Extension
-npm install
-# Ensure GEMINI_API_KEY is set in your environment or .env file
-
-
-### Scripts
-| Command | Description | Standard | 
-| :--- | :--- | :--- |
-| `npm run build` | Compiles TypeScript and bundles for production deployment. | High Velocity |
-| `npm run dev` | Runs the development build watcher with hot-reloading emulation. | Rapid Iteration |
-| `npm run lint:check` | Checks code quality using Biome/Ruff standards. | Zero Defect |
-| `npm run test:unit` | Executes Vitest suite for module logic. | Verification |
-| `npm run test:e2e` | Executes Playwright tests for full user flows. | Future Proofing |
-
-### Core Principles
-*   **SOLID:** Maintain clear separation of concerns, especially between UI and logic layers.
-*   **DRY:** Eliminate boilerplate code, centralize API interactions.
-*   **YAGNI:** Implement features only when explicitly required by user stories; avoid premature optimization.
-
-## Technology Stack
-
-This repository is engineered for modern browser extension deployment using a strict TypeScript pipeline.
-
-*   **Language:** TypeScript (Strict Mode)
-*   **Build Tool:** Vite / Custom Web Extension Builder
-*   **Linter/Formatter:** Biome (for speed and standardization)
-*   **Testing:** Vitest (Unit), Playwright (E2E)
-*   **AI Backend:** Google Gemini API (Leveraging `gemini-2.5-pro`)
-*   **Manifest:** Manifest Version 3
-*   **Styling:** (TBD based on initial scaffolding, assumed modern CSS-in-JS or plain CSS/SCSS)
-
 ---
 
-## License
+## 2. ARCHITECTURE OVERVIEW (FSD & MV3)
 
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. See the [LICENSE](https://github.com/chirag127/ContextLens-AI-Powered-Web-Summarizer-Browser-Extension/blob/main/LICENSE) file for details.
+The extension adheres to Feature-Sliced Design principles adapted for the browser extension sandbox model:
+
+ascii
+CogniDigest
+├── src/
+│   ├── pages/         // Popup UI & Options Page (React/Preact Layer)
+│   ├── components/    // Reusable UI Primitives (Signals-managed)
+│   ├── features/
+│   │   ├── summaryGenerator/ // Core logic: Content Parsing -> API Call -> Display
+│   │   └── settingsManager/  // Handles local/sync storage access
+│   ├── services/
+│   │   ├── llmProvider.ts    // Abstract layer for LLM calls (Adapter Pattern)
+│   │   └── browserAPI.ts     // Abstractions for chrome.* APIs
+│   └── main.ts        // Entry points (Service Worker, Content Script registration)
+└── manifests/       // Manifest V3 configuration
+
+
+## 3. DEVELOPMENT STANDARDS
+
+### 3.1. Setup
+Follow these steps to establish the local development environment:
+
+bash
+# 1. Clone the repository
+git clone https://github.com/chirag127/CogniDigest-AI-Web-Content-Summarizer-Browser-Extension.git
+cd CogniDigest-AI-Web-Content-Summarizer-Browser-Extension
+
+# 2. Initialize dependencies using uv/npm (npm used for frontend tooling)
+npm install
+
+# 3. Configure secrets (e.g., LLM_API_KEY in a .env file)
+# (Refer to SECURITY.md for key management best practices)
+
+# 4. Run in development mode (Hot Module Replacement enabled)
+npm run dev
+
+
+### 3.2. Execution Scripts
+
+| Script | Command | Description |
+| :--- | :--- | :--- |
+| `dev` | `vite` | Start development server with HMR for rapid UI iteration. |
+| `build` | `vite build` | Compile TypeScript and assets for production MV3 bundle. |
+| `lint` | `npm run biome:check` | Run static analysis against all source files. |
+| `test` | `npm run test:unit` | Execute all Vitest unit tests. |
+| `test:e2e` | `npx playwright test` | Execute end-to-end browser workflow validation. |
+
+### 3.3. Guiding Principles
+This project is engineered based on the following architectural tenets:
+
+*   **SOLID:** Focusing on Single Responsibility (especially in service boundaries) and Liskov Substitution (for LLM adapters).
+*   **DRY:** Abstraction of all repetitive data fetching and UI signaling logic.
+*   **YAGNI:** Features are only implemented when demonstrably required by user feedback or security audits.
+
+## 4. LICENSING & CONTRIBUTION
+
+This project is licensed under **CC BY-NC 4.0**. See the `LICENSE` file for details.
+
+We welcome contributions that enhance performance, security, or LLM integration flexibility. Please review `.github/CONTRIBUTING.md` before submitting Pull Requests.
