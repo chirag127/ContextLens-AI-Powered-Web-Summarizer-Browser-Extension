@@ -1,56 +1,71 @@
-# 🚀 Pull Request: ContextLens Feature/Fix Submission
-
-**Reviewer Focus:** Please prioritize verification against the architectural standards defined in the repository's `AGENTS.md`.
-
+---
+name: Pull Request
+about: Submit a change to CogniDigest-AI-Web-Content-Summarizer-Browser-Extension
+title: "feat: [SHORT_DESCRIPTIVE_TITLE]"
+labels: ['needs-review']
+assignees: []
 ---
 
-## 1. Description of Change
+## Pull Request Checklist
 
-<!-- Briefly explain the core purpose of this PR. What problem does it solve, or what feature does it introduce? -->
+Before submitting your pull request, please ensure that you have completed the following:
 
-## 2. Motivation and Context
+- [ ] I have read the [CONTRIBUTING.md](https://github.com/chirag127/CogniDigest-AI-Web-Content-Summarizer-Browser-Extension/blob/main/.github/CONTRIBUTING.md) guidelines.
+- [ ] My code follows the project's coding style and best practices (e.g., [Biome](https://biomejs.dev/)).
+- [ ] I have performed a self-review of my own code.
+- [ ] I have added comments where necessary to explain complex areas.
+- [ ] I have made corresponding changes to the documentation where appropriate.
+- [ ] My changes generate no new warnings or errors.
+- [ ] I have added tests that prove my fix is effective or that my feature works.
+- [ ] New and existing unit tests pass locally with my changes (`vitest`).
+- [ ] New and existing end-to-end tests pass locally with my changes (`playwright`).
+- [ ] I have checked my changes against the project's security guidelines in [SECURITY.md](https://github.com/chirag127/CogniDigest-AI-Web-Content-Summarizer-Browser-Extension/blob/main/.github/SECURITY.md).
+- [ ] I have ensured that UI changes (if any) are responsive and accessible.
 
-<!-- Why is this change necessary? Link to any relevant issues (e.g., `Closes #123`). -->
+## Type of Change
 
-## 3. Architectural Alignment (Mandatory Check)
+Please mark with an `x` the type of change this PR introduces:
 
-*This section ensures adherence to the Apex Authority Standards.*
+- [ ] **Bug fix**: Fixes an existing issue.
+- [ ] **New feature**: Adds new functionality.
+- [ ] **Refactoring**: Code restructuring without changing external behavior.
+- [ ] **Documentation update**: Changes to README, CONTRIBUTING, etc.
+- [ ] **Chore**: Non-functional changes (e.g., build process, CI/CD, dependency updates).
+- [ ] **Performance improvement**: Optimizes existing functionality.
+- [ ] **Security update**: Addresses a security vulnerability.
 
-- [ ] **SOLID Adherence:** Does this change violate or adhere to SOLID principles? (If a violation was necessary, document why in the comments below).
-- [ ] **DRY Enforcement:** Have duplicate logic blocks been consolidated?
-- [ ] **Future-Proofing:** Does this utilize current (2025/2026) best practices for browser extensions (e.g., Manifest V3 security, performance optimization)?
-- [ ] **Error Handling:** Are all new asynchronous operations and API calls wrapped in robust try/catch or equivalent promise chains?
+## Description
 
-## 4. Technical Details
+Please provide a clear and concise description of the changes you've made. Explain the problem this PR solves and why this solution was chosen.
 
-<!-- Provide specific technical information necessary for the reviewer. -->
+(If applicable, link to relevant issues: e.g., `Fixes #123`, `Resolves #456`)
 
-### Technology Stack Specifics (JavaScript/Browser Extension)
+## Detailed Changes
 
-*   **Core Logic:** (e.g., New Gemini API call parameters, state management updates, service worker modifications)
-*   **UI/UX Impact:** (e.g., Changes to content script injection, resulting DOM manipulation)
+*   **File 1:** Brief explanation of changes.
+*   **File 2:** Brief explanation of changes.
+*   ...
 
-## 5. Verification Plan
+## How Has This Been Tested?
 
-**How should this PR be tested?**
+Describe the tests that you ran to verify your changes. Provide instructions so we can reproduce.
+Please also list any relevant details for your test configuration.
 
-1.  **Local Build:** `npm run build:prod`
-2.  **Local Load:** Load the build artifact into Chrome/Firefox.
-3.  **Test Scenario 1:** Navigate to a long-form news article. Verify summary generation speed and accuracy against the prompt configuration.
-4.  **Test Scenario 2:** Navigate to a complex Reddit thread (e.g., AskScience or TIFU). Verify thread parsing and summary depth.
-5.  **Test Scenario 3 (Negative Test):** Test on a page known to be dynamic or SPA-heavy. Verify graceful degradation or correct content capture.
+- [ ] **Unit Tests**:
+    - Command: `npm run test:unit` (using Vitest)
+    - Describe new/modified tests:
+- [ ] **End-to-End Tests**:
+    - Command: `npm run test:e2e` (using Playwright)
+    - Describe new/modified tests:
+- [ ] **Manual Testing (Browser Extension Specific)**:
+    - Describe steps to manually verify the functionality within the browser.
+    - Browser(s) tested:
+    - OS(s) tested:
 
-## 6. Self-Review Checklist
+## Screenshots/Videos (if applicable)
 
-<!-- Ensure all mandatory repository files have been addressed if they were impacted by this change. -->
+If your changes include UI updates or new features that are visually demonstrable, please include screenshots or a short video.
 
-- [ ] README.md updated (if feature requires new documentation or setup changes).
-- [ ] Dependencies updated/locked in `package.json` and verified with `uv` standards (if applicable).
-- [ ] CI workflow (`.github/workflows/ci.yml`) integrity maintained.
-- [ ] New tests added to cover the modified logic (Vitest/Playwright).
+## Reviewer Notes
 
----
-
-**Contributor:** @{{user}}
-
-**Reviewer Guidance:** Please ensure this PR aligns with the high-velocity, zero-defect mandate outlined in the repository's core documentation.
+Are there any specific areas you would like the reviewer to focus on? Any concerns or complexities they should be aware of?
